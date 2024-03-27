@@ -2,5 +2,17 @@
     "name": "Stock Extension",
     "version": "1.0",
     "description": "Stock Extension Built with Angular",
-    "manifest_version": 3
+    "manifest_version": 3,
+    "permissions": [
+        "activeTab",
+        "webNavigation",
+        "declarativeContent"
+    ],
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+    "action": {
+        "default_popup": "index.html"
+    }
   }

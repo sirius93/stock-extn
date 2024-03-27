@@ -10,4 +10,6 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'Stock-Extn';
+  stock_name = 'AAPL';
+  stock_price = 0;
 }
