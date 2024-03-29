@@ -6,7 +6,9 @@
     "permissions": [
         "activeTab",
         "webNavigation",
-        "declarativeContent"
+        "declarativeContent",
+        "scripting",
+        "activeTab"
     ],
     "background": {
       "service_worker": "background.js",
@@ -14,5 +16,12 @@
     },
     "action": {
         "default_popup": "index.html"
-    }
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://finance.yahoo.com/*"],
+        "js": ["contentScript.js"],
+        "run_at": "document_idle"
+      }
+    ]
   }
