@@ -1,27 +1,26 @@
 # StockExtn
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
+## Steps
+- Install Angular CLI got to [Angular official Website](https://angular.io)
+- Install Node latest stable version 
+  ```
+   git clone https://github.com/sirius93/stock-extn.git
 
-## Development server
+   npm install
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+   ng Build
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```
+- Chrome
+  - hit (chrome://extensions/)[chrome://extensions/]
+  - Enable developer mode
+  - You should see `Load Unpackaged` option
+  - Click and select the folder `dist/stock-extn` or the folder inside dist that has manifest.json file, whatever works for you.
+  - Visit the whitelisted url `https://finance.yahoo.com/quote/*` the extn should be enabled only for this url
+  - Extension will not work for other urls ( Ideally, If that does not happen, **Report**)
+  - Test
+ 
+- _**Stock Details**_ May not load the relevenet data on initil route (Known bug, tried fixing, Maybe I will have to spend more time with Angular or some fundamental changes required in project structure, But Hey, I works at least, and it's a **POC**)
+- Go back to form and come back, details will show you everything.
+  
+      
