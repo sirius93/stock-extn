@@ -1,15 +1,15 @@
-<div class="container">
-    <h2 class="heading">Template Driven Form</h2>
-    <form #form="ngForm" (ngSubmit)="submitForm(form)">
-   
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="searchText" name="searchText" [(ngModel)]="searchText" required>
-        <!-- <div *ngIf="form.controls.searchText?.touched && form.controls.searchText?.invalid" class="text-danger">
-          Search Term is required.
-        </div> -->
-      </div>     
-
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
+<div class="main">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <h2 class="heading">Search Form</h2>
+                <form #form="ngForm" (ngSubmit)="submitForm(form)">            
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="searchText" name="searchText" [(ngModel)]="searchText" required>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>                            
+                </form>
+            </div>    
+        </div> 
+    </div>
+</div>

@@ -1,7 +1,14 @@
-main{
-    min-width: 300px;
+.close-btn{
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    padding: 0.5rem;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background-color: white;
+    color: red;
 }
-
 :host {
     --bright-blue: oklch(51.01% 0.274 263.83);
     --electric-violet: oklch(53.18% 0.28 296.97);
@@ -53,17 +60,6 @@ main{
   p {
     margin: 0;
     color: var(--gray-700);
-  }
-
-  main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
   }
 
   .angular-logo {

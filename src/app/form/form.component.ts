@@ -21,7 +21,9 @@ export class FormComponent {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs: { id: any; }[]) => {{
           chrome.tabs.sendMessage(tabs[0].id, {msg: "setSearchForm", val: this.searchText}, function(response: any) {
             console.log("response", response);
-            window.close();
+            setTimeout(() => {
+              window.close();
+            }, 500);           
           });
         }});
       }

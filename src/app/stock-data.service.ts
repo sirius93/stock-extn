@@ -15,6 +15,5 @@ export class StockDataService {
   setStockDetails(data: StockDetailObject): any {
     this.stockDetails$.next(data); 
     console.log("setStockDetails", this.stockDetails$); 
-    return data;
   }
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
-import { RouterOutlet,RouterLink,RouterLinkActive } from '@angular/router';
+import { RouterOutlet,RouterLink,RouterLinkActive,RouterModule, Route } from '@angular/router';
 import { StockDataService } from './stock-data.service';
 import { delay,Observable, of  } from 'rxjs';
+import { routes } from './app.routes';
 
 export interface StockDetailObject {
   stockName: string;
@@ -13,7 +14,7 @@ declare let chrome: any;
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet,CommonModule, RouterLink, RouterLinkActive,RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -25,6 +26,8 @@ export class AppComponent implements OnInit {
   constructor(public stockDataService: StockDataService) {
   }
   ngOnInit(): void {
+    this.readDOMElements();
+    
     this.stockDataService
     .getStockDetails()
     .pipe(delay(0))
@@ -32,8 +35,6 @@ export class AppComponent implements OnInit {
       this.stockDetails = Object.assign({}, value);
       console.log("stockDetails$", this.stockDetails);
     });
-
-    this.readDOMElements();
   }
   
   readDOMElements(): void {
@@ -44,5 +45,10 @@ export class AppComponent implements OnInit {
         that.stockDataService.setStockDetails(response);
       });
     }});
+  }
+
+  closePopUp() {
+    console.log("close popup");
+    window.close();
   }
 }

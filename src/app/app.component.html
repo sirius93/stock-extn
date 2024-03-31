@@ -1,6 +1,8 @@
-<main class="main">
-  <div class="content">
-    <div class="left-side">
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <button class="close-btn" (click)="closePopUp()">X</button>
       <h1>{{ title }}</h1>
       <nav>
         <ul>
@@ -8,17 +10,18 @@
           <li><a routerLink="/info" routerLinkActive="active" [state] = "stockDetails" ariaCurrentWhenActive="page">Stock Details</a></li>
         </ul>
       </nav>
+      </div>     
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
-
-    <div class="right-side">
-      <router-outlet></router-outlet>     
+    <div class="row">
+      <div class="col">
+        <router-outlet></router-outlet>
+      </div>
     </div>
     
     <!-- The routed views render in the <router-outlet>-->
     
   </div>
-</main>
 
 
 <router-outlet />

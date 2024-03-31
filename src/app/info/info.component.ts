@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, input } from '@angular/core';
 
 @Component({
   selector: 'app-info',
@@ -7,12 +7,19 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './info.component.html',
   styleUrl: './info.component.scss'
 })
-export class InfoComponent implements OnInit {
+export class InfoComponent implements OnInit, OnChanges {
   constructor() { }
-  stockName = history.state.stockName;
-  stockPrice = history.state.stockPrice;
+  @Input() stockName: string = '';
+  @Input() stockPrice: number = 0;
 
   ngOnInit(): void {
     console.log("stockName", this.stockName, "stockPrice", this.stockPrice);
+    this.stockName = history.state.stockName || 'Test Stock';
+    this.stockPrice = history.state.stockPrice || 0;
+  }
+  ngOnChanges(): void {
+    console.log("stockName", this.stockName, "stockPrice", this.stockPrice);
+    this.stockName = history.state.stockName || 'Test Stock';
+    this.stockPrice = history.state.stockPrice || 0;
   }
 }

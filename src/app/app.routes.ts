@@ -4,5 +4,6 @@ import { InfoComponent } from './info/info.component';
 
 export const routes: Routes = [
     { path: 'form', component: FormComponent },
-    { path: 'info', component: InfoComponent }
+    { path: 'info', component: InfoComponent },
+    { path: '',   redirectTo: '/form', component: FormComponent , pathMatch: 'full' }
   ];
