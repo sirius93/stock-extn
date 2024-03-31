@@ -12,7 +12,7 @@
 
    ```
 - Chrome
-  - hit (chrome://extensions/)[chrome://extensions/]
+  - hit [chrome://extensions/](chrome://extensions/)
   - Enable developer mode
   - You should see `Load Unpackaged` option
   - Click and select the folder `dist/stock-extn` or the folder inside dist that has manifest.json file, whatever works for you.
@@ -20,7 +20,7 @@
   - Extension will not work for other urls ( Ideally, If that does not happen, **Report**)
   - Test
  
-- _**Stock Details**_ May not load the relevenet data on initil route (Known bug, tried fixing, Maybe I will have to spend more time with Angular or some fundamental changes required in project structure, But Hey, I works at least, and it's a **POC**)
+- _**Stock Details**_ May not load the relevenet data on initial route (Known bug, tried fixing, Maybe I will have to spend more time with Angular or some fundamental changes required in project structure, But Hey, I works at least, and it's a **POC**)
 - Go back to form and come back, details will show you everything.
   
       
